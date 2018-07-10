@@ -1,0 +1,120 @@
+body{
+  margin: 0;
+  font-family: sans-serif;
+  color: white;
+}
+*{
+  box-sizing: content-box;
+}
+main#main{
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to bottom, #c28330, #e7b675), url('assets/img/jeremy-ricketts-9573-unsplash.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title{
+  font-size: 52px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  margin-top: -50px;
+}
+
+.player1 .title{
+  color: red;
+}
+
+.player2 .title{
+  color: blue;
+}
+
+.score{
+  font-size: 36px;
+  font-size: 300;
+  margin-top: 0;
+}
+
+.score__player1{
+  color: red;
+}
+
+.score__player2{
+  color: blue;
+}
+
+.gameboard{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 2px;
+
+  height: 100%;
+  width: 100%;
+  max-height: 500px;
+  max-width: 500px;
+
+  background-color: black;
+  /* border: 1px solid black; */
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.gameboard__field{
+  /* border: 1px solid black; */
+  background-color: white;
+
+  position: relative;
+  cursor: pointer;
+}
+
+.gameboard__field[data-tile=circle]{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameboard__field[data-tile=circle]::before{
+  content: '';
+  width: 75px;
+  height: 75px;
+  border: 5px solid blue;
+  border-radius: 50%;
+}
+
+.gameboard__field[data-tile=cross]::before,
+.gameboard__field[data-tile=cross]::after{
+  content: '';
+  position: absolute;
+  height: 90px;
+  width: 5px;
+  background-color: red;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.gameboard__field[data-tile=cross]::before{
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Selection */
+.gameboard__field:hover{
+  background-color: rgba(255, 255, 255, .92);
+}
+
+.gameboard__field[data-tile=circle].selected{
+  background-color: rgb(169, 175, 255);
+}
+
+.gameboard__field[data-tile=cross].selected{
+  background-color: rgb(251, 158, 158);
+}
