@@ -12,8 +12,8 @@
 <body>
     
   <main id="main" class="container">
-    <h1 class="title player1Turn">
-      Player #'s turn
+    <h1 data-current-player='1' class="title">
+      Player 1's turn
     </h1>
     <h4 class="score">
       <span class="score__player1">
@@ -25,7 +25,8 @@
       </span>
     </h4>
 
-    <div class="gameboard player1Turn">
+    <div data-current-player='1' class="gameboard">
+      <div id="field-0" class="gameboard__field"></div>
       <div id="field-1" class="gameboard__field"></div>
       <div id="field-2" class="gameboard__field"></div>
       <div id="field-3" class="gameboard__field"></div>
@@ -34,7 +35,10 @@
       <div id="field-6" class="gameboard__field"></div>
       <div id="field-7" class="gameboard__field"></div>
       <div id="field-8" class="gameboard__field"></div>
-      <div id="field-9" class="gameboard__field"></div>
+
+      <svg class="gameboard__win-line" width="500" height="500">
+        <line x1="50" y1="50" x2="350" y2="350" stroke="black" stroke-width="5">
+      </svg>
     </div>
   </main>
 
