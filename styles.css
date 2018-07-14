@@ -42,6 +42,29 @@ main#main{
   color: red;
 }
 
+.play-again-btn{
+  border: 2px solid black;
+  background-color: transparent;
+  color: white;
+  font-weight: 600;
+  border-radius: 1000px;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+
+  margin-top: -25px;
+  margin-bottom: 30px;
+
+  display: none;
+  transition: all .15s;
+}
+
+.play-again-btn:hover{
+  color: black;
+  border-color: white;
+  background-color: white;
+}
+
 .gameboard{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -73,7 +96,6 @@ main#main{
 }
 
 .gameboard__field{
-  /* border: 1px solid black; */
   background-color: white;
 
   position: relative;
